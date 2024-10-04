@@ -1,0 +1,165 @@
+.edit-hotel-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.modal-content {
+  display: flex;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 90%;
+  max-width: 1400px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  max-height: 90vh;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #333;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.images-container {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin-right: 20px;
+  position: relative;
+}
+
+.main-image-wrapper {
+  position: relative;
+  margin-top: 10px;
+
+}
+
+.main-image {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.gallery {
+  margin-top: 10px;
+}
+
+.gallery-thumbnails {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto; /* Cho phép cuộn ngang */
+}
+
+.gallery-thumbnail-wrapper {
+  position: relative;
+}
+
+.gallery-thumbnail {
+  width: 100px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.remove-image-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 5px;
+  cursor: pointer;
+  font-size: 16px;
+ 
+}
+
+.remove-image-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.upload-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.image-upload, .gallery-upload {
+  display: none;
+}
+
+.upload-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.toggle-image-visibility {
+  margin-top: 10px;
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.hotel-details {
+  flex: 1;
+}
+
+.detail-input {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.description-input {
+  height: 100px;
+}
+
+.save-button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+}

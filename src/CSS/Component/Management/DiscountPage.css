@@ -1,0 +1,186 @@
+.discount-page {
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f4;
+}
+
+.add-discount-btn {
+  background-color: #007bff;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.add-discount-btn:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.discount-list {
+  margin-top: 20px;
+}
+
+.discount-item {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  margin-bottom: 15px;
+  border: 1px solid #e1e1e1;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+}
+
+.discount-image {
+  max-width: 120px;
+  height: auto;
+  border-radius: 8px;
+  margin-right: 20px;
+}
+
+.discount-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.discount-info h2 {
+  margin: 0 0 5px;
+  font-size: 18px;
+  color: #333;
+}
+
+.discount-info p {
+  margin: 4px 0;
+  color: #666;
+  font-size: 14px;
+}
+
+.discount-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-left: 20px;
+}
+
+.discount-actions button {
+  background-color: #28a745;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.discount-actions button:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 600px;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h2 {
+  margin: 0 0 15px;
+  font-size: 22px;
+  color: #333;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+  transition: color 0.3s;
+}
+
+.close:hover {
+  color: #007bff;
+}
+
+.add-discount-form input,
+.add-discount-form textarea {
+  width: calc(100% - 24px);
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.add-discount-form input[type="date"] {
+  padding: 10px;
+}
+
+.hotel-selector {
+  margin: 10px 0;
+}
+
+.hotel-selector label {
+  display: block;
+  margin-bottom: 6px;
+  color: #555;
+  font-size: 14px;
+}
+
+.hotel-selector select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.modal-actions {
+  margin-top: 15px;
+  text-align: right;
+}
+
+.modal-actions button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-left: 8px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.modal-actions button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}

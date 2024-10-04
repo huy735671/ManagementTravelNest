@@ -1,0 +1,284 @@
+/* Căn chỉnh toàn bộ nội dung trong container */
+.container {
+  padding: 0px;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Căn chỉnh tiêu đề và phần tử chính bên trái */
+.card, .form, .add-button-container, .top-place-title {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Thiết lập kiểu card */
+.card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+/* Căn lề tiêu đề của card */
+.card-header {
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
+
+/* Căn lề tiêu đề bên trong card */
+.card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+  text-align: left;
+}
+
+/* Căn lề mô tả bên trong card */
+.card-description {
+  font-size: 1rem;
+  color: #666;
+  text-align: left;
+}
+
+/* Phần nội dung chính của card */
+.card-content {
+  padding: 20px;
+}
+
+/* Thiết lập form */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Căn lề của mỗi nhóm input */
+.form-group {
+  margin-bottom: 20px;
+}
+
+/* Căn lề nhãn của input */
+.form-label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+/* Căn chỉnh input và textarea */
+.form-input,
+.form-textarea,
+.form-select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Căn chỉnh textarea để có thể resize theo chiều dọc */
+.form-textarea {
+  resize: vertical;
+}
+
+/* Thiết lập grid cho các phần tử */
+.grid-2, .grid-3 {
+  display: grid;
+  gap: 20px;
+  box-sizing: border-box;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+
+
+/* Thiết lập kiểu button */
+.button {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+/* Button chính */
+.button-primary {
+  background-color: #007bff;
+  color: #fff;
+  margin-top: 10px; /* Khoảng cách trên */
+  margin-bottom: 10px; /* Khoảng cách dưới */
+}
+
+/* Button kiểu outline */
+.button-outline {
+  background-color: transparent;
+  border: 1px solid #007bff;
+  color: #007bff;
+  margin-top: 10px; /* Khoảng cách trên */
+  margin-bottom: 10px; /* Khoảng cách dưới */
+}
+
+/* Button với icon */
+.button-icon {
+  padding: 5px;
+}
+
+/* Căn chỉnh các khung hình ảnh */
+.image-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Căn giữa các phần tử theo chiều dọc */
+  border: 2px dashed #ccc; /* Viền đứt nét cho khung hình */
+  border-radius: 4px; /* Bo tròn các góc của khung hình */
+  width: 100%;
+  height: 150px; /* Thiết lập chiều cao của khung hình */
+  box-sizing: border-box;
+  position: relative; /* Để đặt nút và hình ảnh bên trong */
+  overflow: hidden; /* Để hình ảnh không bị tràn ra ngoài khung */
+}
+
+/* Căn chỉnh icon hình ảnh */
+.image-upload .mx-auto {
+  margin: 0; 
+}
+
+/* Ẩn nút chọn tệp */
+.image-upload input[type="file"] {
+  display: none;
+}
+
+/* Căn chỉnh hình ảnh xem trước */
+.preview-image {
+  width: 100%;
+  height: 120%;
+  object-fit: cover; 
+  border-radius: 4px;
+}
+
+/* Căn chỉnh label tải ảnh lên */
+.image-upload label {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Căn giữa các phần tử trong label */
+  color: #007bff; /* Màu chữ */
+  cursor: pointer;
+  margin-top: 10px; /* Khoảng cách trên */
+}
+
+
+/* Căn chỉnh tab list */
+.tab-list {
+  display: flex;
+  margin-bottom: 20px; /* Khoảng cách dưới */
+}
+
+/* Căn chỉnh từng tab */
+.tab {
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none;
+  background: none;
+  text-align: center;
+}
+
+/* Tab đang hoạt động */
+.tab.active {
+  border-bottom: 2px solid #007bff;
+  font-weight: bold;
+  color: rgb(8, 245, 79);
+}
+
+/* Nội dung của tab */
+.tab-content {
+  padding: 20px;
+  border: 2px solid #eee;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Căn chỉnh nút thêm và tiêu đề "Top Place" */
+.add-button-container, .top-place-title {
+  text-align: left;
+  margin-bottom: 20px; /* Khoảng cách dưới */
+}
+
+/* Căn chỉnh container chứa nút thêm */
+.add-button-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Đặt các phần tử bắt đầu từ bên trái */
+  margin-bottom: 20px; /* Khoảng cách dưới */
+}
+
+/* Nút thêm hoạt động */
+.add-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  margin-top: 10px; /* Khoảng cách trên */
+  margin-bottom: 10px; /* Khoảng cách dưới */
+  box-sizing: border-box;
+}
+
+/* Căn chỉnh các input hoạt động và nút xóa */
+.activity-group {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Khoảng cách giữa các phần tử */
+}
+
+.activity-group .form-input {
+  flex: 1; /* Cho input chiếm toàn bộ chiều rộng còn lại */
+}
+
+.activity-group .button-icon {
+  margin-left: 10px; /* Khoảng cách giữa input và nút xóa */
+}
+
+.top-place-group {
+  display: flex; /* Để phần tử con hiển thị theo hàng ngang */
+  align-items: center; /* Căn chỉnh chiều dọc để checkbox và nhãn ở cùng một dòng */
+  gap: 10px; /* Khoảng cách giữa nhãn và checkbox */
+}
+
+
+
+input[type="checkbox"] {
+  width: 20px; /* Chiều rộng checkbox */
+  height: 20px; /* Chiều cao checkbox */
+}
+
+
+
+/* Căn chỉnh các input hoạt động và nút xóa */
+.activity-group {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Khoảng cách giữa các phần tử */
+}
+
+.activity-group .form-input {
+  flex: 1; /* Cho input chiếm toàn bộ chiều rộng còn lại */
+}
+
+.activity-group .button-icon {
+  margin-left: 10px; /* Khoảng cách giữa input và nút xóa */
+}

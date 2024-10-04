@@ -1,0 +1,87 @@
+.dashboard {
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+.dashboard-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.dashboard-overview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Giảm khoảng cách giữa các ô */
+  margin-bottom: 20px;
+}
+
+.overview-card {
+  flex: 1 1 calc(20% - 10px); /* Điều chỉnh kích thước của ô nhỏ */
+  background-color: #fff;
+  border-radius: 8px; /* Bo góc */
+  padding: 10px; /* Giảm padding */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Giảm độ bóng */
+  height: 80px; /* Chiều cao cố định */
+}
+
+.card-content {
+  display: flex;
+  align-items: center;
+  height: 100%; /* Đảm bảo nội dung chiếm toàn bộ chiều cao */
+}
+
+.icon {
+  font-size: 24px; /* Kích thước nhỏ hơn cho icon */
+  color: #007bff;
+  margin-right: 10px; /* Giảm khoảng cách giữa icon và thông tin */
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.info h3 {
+  margin: 0;
+  font-size: 14px; /* Kích thước chữ tiêu đề nhỏ hơn */
+}
+
+.info p {
+  font-size: 12px; /* Kích thước chữ số lượng nhỏ hơn */
+  font-weight: bold;
+}
+
+.dashboard-cards {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.card {
+  flex: 1;
+  margin: 0 10px;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 10px; /* Giảm padding */
+  text-align: center;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Giảm độ bóng */
+}
+
+.card h3 {
+  margin-bottom: 10px;
+  font-size: 16px; /* Kích thước chữ tiêu đề nhỏ hơn */
+}
+
+.card button {
+  padding: 8px 16px; /* Giảm padding cho nút */
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+.card button:hover {
+  background-color: #0056b3;
+}

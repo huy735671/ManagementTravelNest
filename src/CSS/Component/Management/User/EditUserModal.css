@@ -1,0 +1,92 @@
+.edit-user-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Đảm bảo modal nổi bật hơn các phần tử khác */
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 600px; /* Điều chỉnh chiều rộng modal */
+  max-width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-content h2 {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  color: #333;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px; /* Khoảng cách giữa các trường */
+}
+
+.form-group {
+  flex: 1;
+  min-width: 200px; /* Chiều rộng tối thiểu của các trường */
+  margin-bottom: 0; /* Loại bỏ khoảng cách dưới */
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.form-group input::placeholder {
+  color: #aaa;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.btn-save,
+.btn-close {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.btn-save:hover,
+.btn-close:hover {
+  background-color: #0056b3;
+}
+
+.btn-close {
+  background-color: #ccc;
+}
+
+.btn-close:hover {
+  background-color: #999;
+}

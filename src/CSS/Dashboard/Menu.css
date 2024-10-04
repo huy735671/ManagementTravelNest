@@ -1,0 +1,40 @@
+/* Menu styling */
+.menu {
+  width: 150px; /* Chiều rộng của menu */
+  position: fixed;
+  top: 60px; /* Khoảng cách dưới header */
+  bottom: 0;
+  left: 0;
+  background-color: #f8f9fa; /* Màu nền của menu */
+  padding: 15px; /* Padding trong menu */
+  border-right: 2px solid #dee2e6; /* Đường viền bên phải */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Đổ bóng cho menu */
+  z-index: 1000; /* Đảm bảo menu nằm trên nội dung */
+  overflow-y: auto; /* Thêm thanh cuộn nếu nội dung menu dài */
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu ul li {
+  margin: 10px 0; /* Khoảng cách giữa các mục */
+}
+
+.menu ul li a {
+  display: block;
+  padding: 8px 12px; /* Padding cho liên kết */
+  text-decoration: none;
+  color: #343a40;
+  font-weight: 500;
+  border-radius: 5px; /* Bo góc cho liên kết */
+  transition: background-color 0.3s, color 0.3s; /* Hiệu ứng chuyển màu nền */
+}
+
+.menu ul li a:hover,
+.menu ul li a.active {
+  background-color: #007bff; /* Màu nền khi hover hoặc active */
+  color: #fff; /* Màu chữ khi hover hoặc active */
+}

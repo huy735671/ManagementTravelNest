@@ -1,0 +1,78 @@
+.places-page {
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+.places-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.places-header h1 {
+  font-size: 2em;
+  color: #333;
+
+}
+
+.toggle-add-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+
+
+.favorite-places-section h2 {
+  font-size: 1.5em;
+  color: #333;
+}
+.place-details-list {
+  padding: 20px;
+  background-color: #ffffff;
+}
+
+.place-details-list h2 {
+  font-size: 1.5em;
+  color: #333;
+}
+
+.place-details-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.place-details-list li {
+  margin-bottom: 15px;
+}
+
+.place-details-list li h3 {
+  font-size: 1.2em;
+  color: #007bff;
+}
+
+.place-details-list li p {
+  font-size: 1em;
+  color: #555;
+}
+
+.toggle-view-button {
+  margin-left: 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+
+
+
+
+

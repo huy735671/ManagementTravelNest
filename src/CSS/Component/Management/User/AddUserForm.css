@@ -1,0 +1,52 @@
+.user-form {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: none; /* Loại bỏ boder ngoài */
+  max-width: 100%;
+  position: relative; /* Để có thể định vị nút Đóng */
+}
+
+/* Cập nhật cho nút Đóng */
+.user-form .close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #f0f0f0;
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.user-form .close-button:hover {
+  background: #e0e0e0;
+}
+
+/* Cập nhật kích thước tiêu đề và nút */
+.user-form h2 {
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 1rem; /* Kích thước tiêu đề nhỏ hơn */
+}
+
+.user-form button {
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px; /* Giảm kích thước nút */
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+}
+
+.user-form button:hover {
+  background-color: #0056b3;
+}

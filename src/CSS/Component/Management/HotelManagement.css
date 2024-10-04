@@ -1,0 +1,186 @@
+/* HotelManagement.css */
+
+.hotel-management {
+  padding: 20px;
+}
+
+.add-list {
+  display: flex;
+  justify-content: flex-end; /* Căn lề trái để các nút nằm cùng phía */
+  gap: 10px; /* Khoảng cách giữa các nút */
+}
+
+.toggle-list-btn, .add-hotel-btn {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.toggle-list-btn {
+  background-color: #28a745; /* Màu xanh lá */
+  color: white;
+}
+
+.toggle-list-btn:hover {
+  background-color: #218838; /* Màu xanh lá đậm hơn khi hover */
+}
+
+.add-hotel-btn {
+  background-color: #007bff; /* Màu xanh dương */
+  color: white;
+}
+
+.add-hotel-btn:hover {
+  background-color: #0056b3; /* Màu xanh dương đậm hơn khi hover */
+}
+
+
+
+.add-hotel-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+}
+
+.add-hotel-btn:hover {
+  background-color: #0056b3;
+}
+
+.hotel-management h1 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.hotel-list {
+  margin-top: 20px;
+}
+
+.hotel-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.hotel-list ul li {
+  display: flex;
+  align-items: center;
+  background-color: #fdfdfd;
+  padding: 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hotel-list ul li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.hotel-thumbnail {
+  width: 60px;
+  height: 60px;
+  border-radius: 5px;
+  margin-right: 15px;
+  object-fit: cover;
+}
+
+.modal {
+  position: fixed;
+  top: 60px; /* Đẩy pop-up xuống 60px để tránh bị che bởi header */
+  left: 50%;
+  transform: translate(-50%, 0);
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  width: 90%;
+  max-width: 500px;
+  max-height: 80vh; /* Giới hạn chiều cao của pop-up */
+  overflow-y: auto; /* Cho phép cuộn nội dung nếu cần */
+  transition: all 0.3s ease-in-out;
+}
+
+.modal-header {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #444;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.modal-body label {
+  font-size: 14px;
+  color: #666;
+}
+
+.modal-body input[type="text"],
+.modal-body input[type="file"] {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+  color: #333;
+}
+
+.preview-image {
+  width: 150px; /* Giới hạn chiều rộng hình ảnh */
+  height: 150px; /* Giới hạn chiều cao hình ảnh */
+  border-radius: 10px;
+  margin-top: 10px;
+  object-fit: cover; /* Đảm bảo hình ảnh vừa khung mà không bị méo */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #f0f0f0;
+}
+
+button.primary {
+  background-color: #007bff;
+  color: white;
+}
+
+button.primary:hover {
+  background-color: #0056b3;
+}
+
+button.secondary {
+  background-color: #6c757d;
+  color: white;
+}
+
+button.secondary:hover {
+  background-color: #565e64;
+}

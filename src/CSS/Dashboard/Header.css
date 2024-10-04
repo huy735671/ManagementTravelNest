@@ -1,0 +1,62 @@
+.header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  position: relative; /* Thêm vị trí tương đối để dropdown-menu căn chỉnh chính xác */
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-image {
+  width: 60px; /* Kích thước mới của logo */
+  height: auto;
+}
+
+.app-name {
+  margin-left: 10px;
+  font-size: 22px;
+}
+
+.user-profile {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  position: relative; /* Thêm vị trí tương đối để dropdown-menu căn chỉnh chính xác */
+  margin-right: 20px;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius:30%;
+  cursor: pointer;
+  margin-right: 10px; /* Thêm khoảng cách bên phải */
+}
+
+.dropdown-menu {
+  position: absolute;
+  right: 0;
+  top: 50px; /* Điều chỉnh vị trí cho phù hợp với avatar */
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 10px;
+  width: 150px; /* Có thể điều chỉnh kích thước dropdown-menu */
+  z-index: 1000; /* Đảm bảo rằng dropdown-menu hiển thị trên các phần tử khác */
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 8px 12px;
+  text-decoration: none;
+  color: #333;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f0f0f0;
+}

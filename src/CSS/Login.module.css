@@ -1,0 +1,64 @@
+.container {
+  display: flex; /* Đảm bảo container sử dụng flexbox */
+  flex-direction: column;
+  align-items: center; /* Căn giữa theo chiều ngang */
+  justify-content: center; /* Căn giữa theo chiều dọc */
+  max-width: 300px;
+  margin: 50px auto;
+  padding: 40px; /* Thêm khoảng cách bên trong container */
+  border-radius: 8px; /* Bo góc cho container */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Thêm bóng để nổi bật hơn */
+  background-color: #fff; /* Màu nền trắng cho container */
+  margin-top: 10%;
+}
+
+.heading {
+  font-size: 1.5em;
+  margin-bottom: 20px; /* Thêm khoảng cách dưới tiêu đề */
+}
+
+.formGroup {
+  margin-bottom: 15px; /* Thay đổi khoảng cách dưới các nhóm form */
+}
+
+.input {
+  width: 100%; /* Đảm bảo input chiếm hết chiều rộng của khung chứa */
+  padding: 8px;
+  margin: 5px 0;
+  border-radius: 4px; /* Bo góc cho input */
+  border: 1px solid #ddd; /* Đường viền cho input */
+  box-sizing: border-box; /* Bao gồm padding và border trong width */
+}
+
+.button {
+  padding: 10px 20px;
+  width: 100%;
+  border-radius: 4px; /* Bo góc cho nút */
+  background-color: #007bff; /* Màu nền cho nút */
+  color: white; /* Màu chữ trắng */
+  border: none; /* Xóa đường viền của nút */
+  cursor: pointer; /* Hiển thị con trỏ tay khi di chuột qua nút */
+}
+
+.button:hover {
+  background-color: #0056b3; /* Màu nền khi di chuột qua nút */
+}
+
+/* Phần CSS mới để hỗ trợ ẩn/hiện mật khẩu */
+.passwordWrapper {
+  position: relative;
+  width: 100%; /* Đảm bảo wrapper chiếm hết chiều rộng của khung chứa */
+}
+
+.passwordIcon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #007bff; /* Màu của icon */
+}
+
+.passwordIcon:hover {
+  color: #0056b3; /* Màu icon khi hover */
+}
