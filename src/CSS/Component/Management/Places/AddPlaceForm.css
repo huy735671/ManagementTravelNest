@@ -2,7 +2,7 @@
 .container {
   padding: 0px;
   max-width: 1200px;
-  margin: 0 auto;
+  margin:  auto;
   box-sizing: border-box;
 }
 
@@ -11,15 +11,11 @@
   width: 100%;
   box-sizing: border-box;
 }
-
-/* Thiết lập kiểu card */
-.card {
+.card-container{
   background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  margin-bottom: 20px;
 }
+/* Thiết lập kiểu card */
+
 
 /* Căn lề tiêu đề của card */
 .card-header {
@@ -192,6 +188,7 @@
   border: none;
   background: none;
   text-align: center;
+  color: #007bff;
 }
 
 /* Tab đang hoạt động */

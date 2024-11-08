@@ -1,186 +1,113 @@
 .discount-page {
   padding: 20px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f4f4f4;
+  font-family: Arial, sans-serif;
 }
 
-.add-discount-btn {
-  background-color: #007bff;
-  color: #fff;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 8px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
-  margin-bottom: 20px;
-  display: inline-block;
-}
-
-.add-discount-btn:hover {
-  background-color: #0056b3;
-  transform: scale(1.05);
-}
-
-.discount-list {
-  margin-top: 20px;
-}
-
-.discount-item {
-  display: flex;
-  align-items: center;
-  padding: 15px;
-  margin-bottom: 15px;
-  border: 1px solid #e1e1e1;
-  border-radius: 8px;
-  background-color: #fff;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  max-width: 600px;
-}
-
-.discount-image {
-  max-width: 120px;
-  height: auto;
-  border-radius: 8px;
-  margin-right: 20px;
-}
-
-.discount-info {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.discount-info h2 {
-  margin: 0 0 5px;
-  font-size: 18px;
+h1 {
+  text-align: center;
   color: #333;
+  margin-bottom: 20px;
 }
 
-.discount-info p {
-  margin: 4px 0;
-  color: #666;
-  font-size: 14px;
-}
-
-.discount-actions {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-left: 20px;
-}
-
-.discount-actions button {
-  background-color: #28a745;
-  color: #fff;
-  padding: 8px 16px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 14px;
-  transition: background-color 0.3s, transform 0.2s;
-}
-
-.discount-actions button:hover {
-  background-color: #218838;
-  transform: scale(1.05);
-}
-
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
+.discount-table {
   width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.discount-table th,
+.discount-table td {
+  border: 1px solid #ddd;
+  padding: 12px 15px; /* Tăng padding để tạo khoảng cách tốt hơn */
+  text-align: left;
+}
+
+.discount-table th {
+  background-color: #4CAF50; /* Màu nền cho tiêu đề */
+  color: white; /* Màu chữ cho tiêu đề */
+}
+
+.discount-table tr:hover {
+  background-color: #f1f1f1; /* Hiệu ứng hover cho hàng */
+}
+
+button {
+  margin-right: 10px;
+  padding: 10px 15px; /* Thêm padding cho nút */
+  border: none;
+  border-radius: 5px; /* Bo góc cho nút */
+  cursor: pointer;
+  background-color: #4CAF50; /* Màu nền cho nút */
+  color: white; /* Màu chữ cho nút */
+  transition: background-color 0.3s ease; /* Hiệu ứng chuyển màu */
+}
+
+button:hover {
+  background-color: #45a049; /* Màu nền khi hover */
+}
+
+.popup {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000;
 }
 
-.modal-content {
-  background: #fff;
+.popup-content {
+  background-color: white;
   padding: 20px;
-  border-radius: 8px;
-  width: 90%;
-  max-width: 600px;
+  border-radius: 8px; /* Bo góc cho popup */
+  width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Đổ bóng cho popup */
   position: relative;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-.modal-content h2 {
-  margin: 0 0 15px;
-  font-size: 22px;
-  color: #333;
 }
 
 .close {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 24px;
+  right: 15px;
+  top: 15px;
   cursor: pointer;
-  color: #333;
-  transition: color 0.3s;
+  font-size: 18px;
+  color: #999; /* Màu chữ cho nút đóng */
 }
 
 .close:hover {
-  color: #007bff;
+  color: black; /* Màu chữ khi hover */
+}
+
+.add-discount-form {
+  display: flex;
+  flex-direction: column;
 }
 
 .add-discount-form input,
-.add-discount-form textarea {
-  width: calc(100% - 24px);
-  padding: 10px;
-  margin: 8px 0;
+.add-discount-form select {
+  margin: 10px 0; /* Tạo khoảng cách giữa các trường */
+  padding: 10px; /* Thêm padding cho trường nhập */
   border: 1px solid #ccc;
-  border-radius: 8px;
-  box-sizing: border-box;
-  font-size: 14px;
+  border-radius: 4px; /* Bo góc cho trường nhập */
 }
 
-.add-discount-form input[type="date"] {
-  padding: 10px;
-}
-
-.hotel-selector {
+.date-picker {
   margin: 10px 0;
 }
 
-.hotel-selector label {
-  display: block;
-  margin-bottom: 6px;
-  color: #555;
-  font-size: 14px;
+.form-group {
+  margin: 10px 0; /* Tạo khoảng cách cho nhóm trường */
 }
 
-.hotel-selector select {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 14px;
+.form-group label {
+  margin-bottom: 5px; /* Tạo khoảng cách giữa label và input */
+  font-weight: bold; /* In đậm label */
 }
 
-.modal-actions {
-  margin-top: 15px;
-  text-align: right;
-}
-
-.modal-actions button {
-  background-color: #007bff;
-  color: #fff;
-  padding: 10px 16px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 14px;
-  margin-left: 8px;
-  transition: background-color 0.3s, transform 0.2s;
-}
-
-.modal-actions button:hover {
-  background-color: #0056b3;
-  transform: scale(1.05);
+.add-discount-button-container {
+  display: flex;
+  justify-content: flex-end; /* Đẩy nút về bên phải */
+  margin-top: 20px; /* Tạo khoảng cách trên nút */
 }

@@ -96,7 +96,7 @@ const PlacesList = () => {
       <div className="all-places-list">
         {currentPlaces.map(place => (
           <div className="all-place-item" key={place.id}>
-            <img src={place.image} alt={place.title} className="place-image" onClick={() => openLightbox(place.image)} />
+            <img src={place.imageUrl} alt={place.title} className="place-image" onClick={() => openLightbox(place.imageUrl)} />
             <div className="place-info">
               <h3>{place.title}</h3>
               <p>{place.description}</p>

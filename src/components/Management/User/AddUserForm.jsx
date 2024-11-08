@@ -110,7 +110,10 @@ const AddUserForm = ({ fetchUsers, onClose }) => {
             <label>Vai trò:</label>
             <select value={role} onChange={(e) => setRole(e.target.value)}>
               <option value="user">Người dùng</option>
+              <option value="partner">Chủ khách sạn</option>
               <option value="admin">Quản trị viên</option>
+
+              
             </select>
           </div>
         </div>

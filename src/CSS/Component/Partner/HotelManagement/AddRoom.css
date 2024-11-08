@@ -1,0 +1,145 @@
+body.modal-open {
+    overflow: hidden; /* Ngăn chặn cuộn trong body khi modal mở */
+}
+
+.add-room-container {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    padding: 40px; /* Tăng padding để tạo không gian thoáng */
+    border-radius: 12px; /* Bo góc mềm mại */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ hơn */
+    max-width: 600px; /* Chiều rộng tối đa của modal */
+    width: 100%; /* Chiều rộng 100% để phù hợp với màn hình nhỏ */
+    max-height: 80vh; /* Chiều cao tối đa của modal */
+    overflow-y: auto; /* Cho phép cuộn nếu nội dung quá dài */
+    position: relative; /* Để đặt nút đóng */
+    animation: fadeIn 0.3s ease; /* Hiệu ứng fade in */
+    margin: 0 auto; /* Căn giữa modal */
+    z-index: 1050; /* Đảm bảo modal nằm trên các phần tử khác */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.close-button {
+    position: absolute;
+    top: 20px; /* Khoảng cách từ trên */
+    right: 20px; /* Khoảng cách từ bên phải */
+    background: none; /* Không có nền */
+    border: none; /* Không có đường viền */
+    font-size: 18px; /* Kích thước chữ lớn hơn */
+    cursor: pointer; /* Con trỏ thay đổi khi hover */
+    color: #333; /* Màu chữ tối */
+}
+
+h1 {
+    margin-bottom: 20px; /* Tăng khoảng cách dưới tiêu đề */
+    color: #333; /* Màu chữ tối */
+}
+
+.error {
+    color: red; /* Màu đỏ cho thông báo lỗi */
+    margin-bottom: 10px; /* Khoảng cách dưới thông báo lỗi */
+}
+
+.form-grid {
+    display: grid; /* Sử dụng grid cho layout */
+    grid-template-columns: repeat(2, 1fr); /* 2 cột bằng nhau */
+    gap: 15px; /* Khoảng cách giữa các ô */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column; /* Đặt các phần tử trong cột */
+}
+.imgtick-group {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+
+}
+.checkbox-group{
+    display: flex;
+    flex-direction: row;
+}
+
+label {
+    margin-bottom: 5px; /* Khoảng cách giữa label và input */
+    font-weight: bold; /* Chữ đậm cho label */
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    padding: 10px; /* Padding cho input */
+    border: 1px solid #ccc; /* Đường viền nhẹ cho input */
+    border-radius: 5px; /* Bo góc input */
+    font-size: 14px; /* Kích thước chữ cho input */
+}
+
+input[type="checkbox"] {
+    margin-right: 5px; /* Khoảng cách bên phải cho checkbox */
+}
+.image-upload-container {
+    display: flex; /* Sử dụng Flexbox để căn chỉnh */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    gap: 10px; /* Khoảng cách giữa hình ảnh và nút upload */
+}
+
+.uploaded-image {
+    width: 50px; /* Chiều rộng của hình ảnh */
+    height: 50px; /* Chiều cao của hình ảnh */
+    object-fit: cover; /* Giữ tỉ lệ hình ảnh */
+    border-radius: 5px; /* Bo góc cho hình ảnh */
+}
+
+.amenities-section {
+    grid-column: span 2; /* Chiếm 2 cột */
+}
+
+.amenities-grid {
+    display: grid; /* Sử dụng grid cho tiện nghi */
+    grid-template-columns: repeat(2, 1fr); /* 2 cột cho tiện nghi */
+    gap: 10px; /* Khoảng cách giữa tiện nghi */
+}
+
+.amenity-item {
+    display: flex;
+    align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+.form-actions {
+    grid-column: span 2; /* Chiếm 2 cột */
+    display: flex;
+    justify-content: flex-end; /* Căn chỉnh nút về bên phải */
+    margin-top: 20px; /* Khoảng cách trên cho form actions */
+}
+
+.submit-button,
+.cancel-button {
+    padding: 10px 20px; /* Padding cho nút */
+    border: none; /* Không có đường viền */
+    border-radius: 5px; /* Bo góc cho nút */
+    font-size: 16px; /* Kích thước chữ lớn hơn */
+    margin-left: 10px; /* Khoảng cách giữa 2 nút */
+    cursor: pointer; /* Con trỏ thay đổi khi hover */
+}
+
+.submit-button {
+    background-color: #4CAF50; /* Màu nền xanh cho nút lưu */
+    color: white; /* Màu chữ trắng */
+}
+
+.cancel-button {
+    background-color: #f44336; /* Màu nền đỏ cho nút hủy */
+    color: white; /* Màu chữ trắng */
+}

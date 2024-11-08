@@ -8,6 +8,7 @@ import HotelManagement from '../components/Management/HotelManagement'; // Impor
 import PlacesPage from '../components/Management/PlacesPage'; // Import HotelManagement
 import '../CSS/Dashboard/DashboardLayout.css'; // Import CSS
 import DiscountPage from '../components/Management/DiscountPage';
+import TourManagement from '../components/Management/Tour/TourManagement';
 
 const DashboardLayout = () => {
   return (
@@ -22,6 +23,7 @@ const DashboardLayout = () => {
             <Route path='discount-page' element={<DiscountPage/>}/>
             <Route path="user-management" element={<UserManagement />} />
             <Route path="hotel-management" element={<HotelManagement />} />
+            <Route path="tour-management" element={<TourManagement />} />
           </Routes>
         </div>
       </div>

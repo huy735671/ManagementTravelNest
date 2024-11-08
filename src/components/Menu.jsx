@@ -11,6 +11,7 @@ const Menu = () => {
         <li><Link to={"/dashboard/discount-page"}>Mã giảm giá</Link></li>
         <li><Link to="/dashboard/user-management">Quản lý người dùng</Link></li>
         <li><Link to="/dashboard/hotel-management">Quản lý khách sạn</Link></li>
+        <li><Link to="/dashboard/tour-management">Quản lý tour</Link></li>
       </ul>
     </div>
   );

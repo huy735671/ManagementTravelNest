@@ -28,6 +28,8 @@ const Login = () => {
         const userData = userDoc.data();
         if (userData.role === 'admin') {
           navigate("/dashboard"); // Điều hướng đến trang dashboard nếu là admin
+        } else if (userData.role === 'partner') {
+          navigate("/dashboardPartner"); // Điều hướng đến trang dành cho partner
         } else {
           alert("Bạn không có quyền truy cập vào trang quản trị!");
         }

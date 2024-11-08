@@ -1,0 +1,51 @@
+/* Thêm vào RoomManagement.css */
+.room-filter {
+  display: flex;
+  align-items: center; /* Căn giữa theo chiều dọc */
+  justify-content: space-between; /* Phân phối khoảng cách giữa các phần tử */
+  margin-bottom: 20px;
+}
+
+.room-filter input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  flex: 1; /* Cho phép ô tìm kiếm chiếm không gian còn lại */
+  margin-right: 10px; /* Khoảng cách giữa ô tìm kiếm và dropdown */
+}
+
+.room-filter select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 10px; /* Khoảng cách giữa dropdown và nút thêm phòng */
+}
+
+.room-filter button {
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.room-filter button:hover {
+  background-color: #0056b3;
+}
+
+
+.add-room-popup {
+  position: fixed; /* Đặt vị trí cố định để luôn giữ vị trí giữa màn hình */
+  top: 50%; /* Đặt khoảng cách từ phía trên 50% */
+  left: 50%; /* Đặt khoảng cách từ bên trái 50% */
+  transform: translate(-50%, -50%); /* Dịch chuyển để căn giữa */
+  background-color: white; /* Màu nền */
+  border: 1px solid #ccc; /* Đường viền */
+  border-radius: 4px; /* Bo tròn góc */
+  padding: 20px; /* Khoảng cách bên trong */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Đổ bóng */
+  z-index: 1000; /* Đảm bảo popup nằm trên các phần tử khác */
+}
+
+

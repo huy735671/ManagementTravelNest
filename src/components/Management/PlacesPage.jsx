@@ -42,7 +42,7 @@ const PlacesPage = () => {
     <div className="places-page">
       <header className="places-header">
         <h1>Quản lý địa điểm</h1>
-        <div>
+        <div> 
           <button onClick={() => setIsAdding(!isAdding)} className="toggle-add-button">
             {isAdding ? 'Hủy thêm địa điểm' : 'Thêm địa điểm'}
           </button>

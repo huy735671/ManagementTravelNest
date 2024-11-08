@@ -6,7 +6,7 @@ const PlacesList = ({ topPlaces, handleEditPlace }) => { // Xóa handleDeletePla
     <div className="all-places-list">
       {topPlaces.map(place => (
         <div key={place.id} className="all-place-item">
-          <img src={place.image} alt={place.title} className="place-image" />
+          <img src={place.imageUrl} alt={place.title} className="place-image" />
           <div className="place-info">
             <h2>{place.title}</h2>
             <p>{place.location}</p>

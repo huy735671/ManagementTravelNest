@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, {  useEffect, useState } from "react";
 import Modal from "react-modal";
 import { db, storage } from "../../../firebaseConfig"; // Import Firestore
-import { collection, addDoc } from "firebase/firestore"; // Import các hàm Firestore
+import { collection, addDoc, getDocs, query, where } from "firebase/firestore"; // Import các hàm Firestore
 import styles from "../../../CSS/Component/Management/Hotel/AddHotel.module.css";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage"; // Import các hàm Storage
 
@@ -9,13 +9,14 @@ Modal.setAppElement("#root");
 
 export default function AddHotel() {
   const [partnerType, setPartnerType] = useState("existing");
+  const [partnerAccounts, setPartnerAccounts] = useState([]);
   const [formData, setFormData] = useState({
-    hotelName: "",
+    title: "",
     hotelType: "",
     address: "",
     location: "",
     starRating: "",
-    priceRange: "",
+    pricePerNight: "",
     description: "",
     amenities: [],
     partnerAccount: "",
@@ -23,13 +24,48 @@ export default function AddHotel() {
     newPartnerEmail: "",
     images: [],
   });
+  useEffect(() => {
+    const loadPartnerAccounts = async () => {
+      const accounts = await fetchPartnerAccounts();
+      setPartnerAccounts(accounts);
+    };
+
+    loadPartnerAccounts();
+  }, []);
+  const fetchPartnerAccounts = async () => {
+    try {
+      const partnerAccounts = [];
+      const q = query(collection(db, "users"), where("role", "==", "partner"));
+      const querySnapshot = await getDocs(q);
+      querySnapshot.forEach((doc) => {
+        partnerAccounts.push({ id: doc.id, ...doc.data() });
+      });
+      return partnerAccounts;
+    } catch (error) {
+      console.error("Lỗi khi lấy danh sách tài khoản đối tác: ", error);
+      return [];
+    }
+  };
+  
+  const formatPrice = (value) => {
+    return value.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  };
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+
+    if (name === "pricePerNight") {
+      const numericValue = value.replace(/[^0-9]/g, ""); // Loại bỏ ký tự không phải số
+      setFormData({
+        ...formData,
+        [name]: formatPrice(numericValue), // Định dạng lại giá mỗi khi nhập
+      });
+    } else {
+      setFormData({
+        ...formData,
+        [name]: value,
+      });
+    }
   };
 
   const handleCheckboxChange = (e) => {
@@ -73,12 +109,12 @@ export default function AddHotel() {
   
       // Reset form hoặc hiển thị thông báo thành công
       setFormData({
-        hotelName: "",
+        title: "",
         hotelType: "",
         address: "",
         location: "",
         starRating: "",
-        priceRange: "",
+        pricePerNight: "",
         description: "",
         amenities: [],
         partnerAccount: "",
@@ -123,15 +159,15 @@ export default function AddHotel() {
               <h3 className={styles.sectionTitle}>Thông tin Khách sạn</h3>
               <div className={styles.grid}>
                 <div className={styles.formGroup}>
-                  <label htmlFor="hotelName" className={styles.label}>
+                  <label htmlFor="title" className={styles.label}>
                     Tên Khách sạn
                   </label>
                   <input
-                    id="hotelName"
-                    name="hotelName"
+                    id="title"
+                    name="title"
                     className={styles.input}
                     placeholder="Nhập tên khách sạn"
-                    value={formData.hotelName}
+                    value={formData.title}
                     onChange={handleInputChange}
                   />
                 </div>
@@ -149,7 +185,7 @@ export default function AddHotel() {
                     <option value="">Chọn loại khách sạn</option>
                     <option value="resort">Resort</option>
                     <option value="business">Khách sạn Doanh nhân</option>
-                    <option value="boutique">Khách sạn Boutique</option>
+                    <option value="Villa">Biệt thự</option>
                     <option value="apartment">Căn hộ Dịch vụ</option>
                   </select>
                 </div>
@@ -199,21 +235,17 @@ export default function AddHotel() {
                   </select>
                 </div>
                 <div className={styles.formGroup}>
-                  <label htmlFor="priceRange" className={styles.label}>
-                    Khoảng Giá
+                  <label htmlFor="pricePerNight" className={styles.label}>
+                    Giá mỗi đêm
                   </label>
-                  <select
-                    id="priceRange"
-                    name="priceRange"
-                    className={styles.select}
-                    value={formData.priceRange}
+                  <input
+                    id="pricePerNight"
+                    name="pricePerNight"
+                    className={styles.input}
+                    placeholder="Nhập giá mỗi đêm"
+                    value={formData.pricePerNight}
                     onChange={handleInputChange}
-                  >
-                    <option value="">Chọn khoảng giá</option>
-                    <option value="budget">Tiết kiệm</option>
-                    <option value="midrange">Trung bình</option>
-                    <option value="luxury">Cao cấp</option>
-                  </select>
+                  />
                 </div>
               </div>
               <div className={styles.formGroup}>
@@ -283,23 +315,25 @@ export default function AddHotel() {
                 </div>
               </div>
               {partnerType === "existing" ? (
-                <div className={styles.formGroup}>
-                  <label htmlFor="partnerAccount" className={styles.label}>
-                    Tài khoản Đối tác
-                  </label>
-                  <select
-                    id="partnerAccount"
-                    name="partnerAccount"
-                    className={styles.select}
-                    value={formData.partnerAccount}
-                    onChange={handleInputChange}
-                  >
-                    <option value="">Chọn tài khoản đối tác</option>
-                    <option value="partner1">Công ty Du lịch ABC</option>
-                    <option value="partner2">Khách sạn XYZ</option>
-                    <option value="partner3">Tập đoàn Khách sạn 123</option>
-                  </select>
-                </div>
+  <div className={styles.formGroup}>
+    <label htmlFor="partnerAccount" className={styles.label}>
+      Tài khoản Đối tác
+    </label>
+    <select
+      id="partnerAccount"
+      name="partnerAccount"
+      className={styles.select}
+      value={formData.partnerAccount}
+      onChange={handleInputChange}
+    >
+      <option value="">Chọn tài khoản đối tác</option>
+      {partnerAccounts.map((account) => (
+        <option key={account.id} value={account.id}>
+          {account.username} - {account.email} {/* Bạn có thể thay đổi theo thông tin bạn muốn hiển thị */}
+        </option>
+      ))}
+    </select>
+  </div>
               ) : (
                 <>
                   <div className={styles.formGroup}>

@@ -3,7 +3,6 @@ import UserList from "../Management/User/UserList";
 import AddUserForm from "../Management/User/AddUserForm";
 import "../../CSS/Component/Management/UserManagement.css";
 import { db } from "../../firebaseConfig";
-
 import {
   collection,
   query,
@@ -17,6 +16,7 @@ import Modal from "react-modal";
 const UserManagement = () => {
   const [admins, setAdmins] = useState([]);
   const [users, setUsers] = useState([]);
+  const [partners, setPartners] = useState([]); // State for partners
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const fetchUsers = async () => {
@@ -26,9 +26,11 @@ const UserManagement = () => {
         where("role", "==", "admin")
       );
       const qUser = query(collection(db, "users"), where("role", "==", "user"));
+      const qPartner = query(collection(db, "users"), where("role", "==", "partner")); // Fetch partners
 
       const querySnapshotAdmin = await getDocs(qAdmin);
       const querySnapshotUser = await getDocs(qUser);
+      const querySnapshotPartner = await getDocs(qPartner); // Get partners
 
       const adminList = querySnapshotAdmin.docs.map((doc) => ({
         id: doc.id,
@@ -38,9 +40,14 @@ const UserManagement = () => {
         id: doc.id,
         ...doc.data(),
       }));
+      const partnerList = querySnapshotPartner.docs.map((doc) => ({ // Map partners
+        id: doc.id,
+        ...doc.data(),
+      }));
 
       setAdmins(adminList);
       setUsers(userList);
+      setPartners(partnerList); // Update partners state
     } catch (error) {
       console.error("Lỗi khi lấy người dùng:", error);
     }
@@ -79,6 +86,7 @@ const UserManagement = () => {
         <UserList
           admins={admins}
           users={users}
+          partners={partners} // Pass partners to UserList
           onEditUser={handleEditUser}
           onDeleteUser={handleDeleteUser}
         />

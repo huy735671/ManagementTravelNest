@@ -1,0 +1,86 @@
+body {
+    background-color: #f7f7f7;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 1600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    color: #333;
+    text-align: center;
+  }
+  
+  .searchInput {
+    padding: 10px;
+    width: 95%;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .table {
+    width: 100%; /* Chiều rộng bảng 100% */
+    border-collapse: collapse; /* Gộp viền */
+  }
+  
+  .table th, .table td {
+    border: 1px solid #ddd; /* Đường viền xám nhạt */
+    padding: 12px; /* Khoảng cách bên trong */
+    text-align: left; /* Căn trái cho văn bản */
+  }
+  
+  .table th {
+    background-color: #f2f2f2; /* Màu nền tiêu đề bảng */
+    color: #333; /* Màu chữ tiêu đề */
+  }
+  
+  
+  .noData {
+    text-align: center;
+    padding: 20px;
+    color: #888;
+  }
+  select {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  .dropdown {
+    position: absolute;
+    background-color: #ffffff; /* Màu nền trắng */
+    border: 1px solid #ccc; /* Đường viền xám nhạt */
+    border-radius: 5px; /* Bo tròn các góc */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+    z-index: 1; /* Đặt trên cùng */
+    margin-top: 5px; /* Khoảng cách với tiêu đề */
+    width: 150px; /* Chiều rộng dropdown */
+  }
+  
+  .dropdown div {
+    padding: 10px; /* Khoảng cách bên trong */
+    cursor: pointer; /* Con trỏ tay khi di chuột */
+    transition: background-color 0.2s; /* Hiệu ứng chuyển màu nền */
+  }
+  
+  .dropdown div:hover {
+    background-color: #f1f1f1; /* Màu nền khi di chuột */
+  }
+  
+  .dropdown div.selected {
+    background-color: #d1e7dd; /* Màu nền cho trạng thái đã chọn */
+    font-weight: bold; /* Làm đậm chữ */
+  }
+  
+  
+  
