@@ -13,13 +13,13 @@ const MenuPartner = () => {
           <Link to="/dashboardPartner/room-management"> Quản lý phòng</Link>
         </li>
         <li>
-          <Link to="/dashboardPartner/DiscountOwnerManager"> Quản lý giảm giá</Link>
+          <Link to="/dashboardPartner/DiscountOwnerManager"> Quản lý mã giảm giá </Link>
         </li>
         <li>
           <Link to="/dashboardPartner/RoomBookingManagement" >Quản lý đặt phòng</Link>
         </li>
         <li>
-          <Link to="/dashboardPartner/DiscountManager" >Quản lý giảm giá</Link>
+          <Link to="/dashboardPartner/DiscountManager" >Quản lý phòng giảm giá</Link>
         </li>
       </ul>
     </div>

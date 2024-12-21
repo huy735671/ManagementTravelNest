@@ -9,6 +9,8 @@ import {
 } from "firebase/firestore";
 import { auth, db } from "../../../../firebaseConfig";
 import "../../../../CSS/Component/Partner/HotelManagement/RoomBookingManagement.css";
+import emailjs from "emailjs-com";
+
 
 const RoomBookingManagement = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -45,6 +47,8 @@ const RoomBookingManagement = () => {
       setLoading(false);
     }
   }, []);
+
+
 
   const fetchBookings = useCallback(async () => {
     if (!hotelId) return;
@@ -111,6 +115,55 @@ const RoomBookingManagement = () => {
     setFilterStatus(status);
     setShowDropdown(false); // Close dropdown after selecting
   };
+  
+  
+
+  const sendEmail = (booking) => {
+    console.log("Booking email:", booking.bookedBy?.email);  
+    const templateParams = {
+      to_email: booking.bookedBy?.email,  
+      customer_name: booking.bookedBy?.name || "Khách hàng",
+      room_type: booking.roomType,
+      rooms: booking.rooms,
+      check_in_date: new Date(booking.checkInDate).toLocaleDateString("en-GB"),
+      check_out_date: new Date(booking.checkOutDate).toLocaleDateString("en-GB"),
+      total_price: booking.totalPrice?.toLocaleString() + " VND",
+      payment_method: booking.paymentMethod,
+    };
+  
+    emailjs
+      .send(
+        "service_d0qww9q", 
+        "template_cflk3s9",  
+        templateParams,
+        "e04SOwpTXcFoHZ6Pk" 
+      )
+      .then(
+        (response) => {
+          console.log("Email gửi thành công!", response.status, response.text);
+        },
+        (err) => {
+          console.error("Gửi email thất bại...", err);
+        }
+      );
+  };
+  
+  
+  const handleConfirm = (bookingId) => {
+    const booking = bookings.find((b) => b.id === bookingId);
+    if (!booking) return;
+  
+    handleStatusChange(bookingId, "confirmed");
+    sendEmail(booking);
+  };
+
+  const handleReject = (bookingId) => {
+    handleStatusChange(bookingId, "cancelled");
+  };
+
+  const handleComplete = (bookingId) => {
+    handleStatusChange(bookingId, "completed");
+  };
 
   return (
     <div className="container">
@@ -138,12 +191,12 @@ const RoomBookingManagement = () => {
               onClick={handleDropdownToggle}
               style={{ cursor: "pointer", position: "relative" }}
             >
-              Trạng thái {showDropdown ? "▲" : "▼"} {/* Biểu tượng hiển thị */}
+              Trạng thái {showDropdown ? "▲" : "▼"}
               {showDropdown && (
                 <div className="dropdown">
                   <div
-                    onClick={() => handleFilterStatusChange("all")} // Gọi hàm lọc với trạng thái 'all'
-                    className={filterStatus === "all" ? "selected" : ""} // Đánh dấu trạng thái đã chọn
+                    onClick={() => handleFilterStatusChange("all")}
+                    className={filterStatus === "all" ? "selected" : ""}
                   >
                     Tất cả
                   </div>
@@ -164,7 +217,6 @@ const RoomBookingManagement = () => {
                 </div>
               )}
             </th>
-
             <th>Tổng giá</th>
           </tr>
         </thead>
@@ -174,9 +226,9 @@ const RoomBookingManagement = () => {
               <tr key={booking.id}>
                 <td>{booking.bookedBy?.email}</td>
                 <td>{booking.roomType}</td>
-                <td>{booking.rooms}</td> {/* Hiển thị số lượng phòng */}
-                <td>{booking.adults}</td> {/* Hiển thị số người lớn */}
-                <td>{booking.children}</td> {/* Hiển thị số trẻ em */}
+                <td>{booking.rooms}</td> 
+                <td>{booking.adults}</td>
+                <td>{booking.children}</td>
                 <td>
                   {new Date(booking.checkInDate).toLocaleDateString("en-GB")}
                 </td>
@@ -184,17 +236,36 @@ const RoomBookingManagement = () => {
                   {new Date(booking.checkOutDate).toLocaleDateString("en-GB")}
                 </td>
                 <td>
-                  <select
-                    value={booking.status}
-                    onChange={(e) =>
-                      handleStatusChange(booking.id, e.target.value)
-                    }
-                  >
-                    <option value="pending">Đang chờ</option>
-                    <option value="confirmed">Đã xác nhận</option>
-                    <option value="completed">Hoàn thành</option>
-                    <option value="cancelled">Đã hủy</option>
-                  </select>
+                  {booking.status === "pending" && (
+                    <>
+                      <button
+                        onClick={() => handleConfirm(booking.id)}
+                        disabled={booking.status === "cancelled"}
+                      >
+                        Xác nhận
+                      </button>
+                      <button
+                        onClick={() => handleReject(booking.id)}
+                        disabled={booking.status === "confirmed"}
+                      >
+                        Từ chối
+                      </button>
+                    </>
+                  )}
+                  {booking.status === "confirmed" && (
+                    <button
+                      onClick={() => handleComplete(booking.id)}
+                      disabled={booking.status === "completed"}
+                    >
+                      Hoàn thành
+                    </button>
+                  )}
+                  {booking.status === "completed" && (
+                    <span>Đã hoàn thành</span>
+                  )}
+                  {booking.status === "cancelled" && (
+                    <span style={{ color: "gray" }}>Đã hủy</span>
+                  )}
                 </td>
                 <td>{booking.totalPrice?.toLocaleString()} VND</td>
               </tr>
